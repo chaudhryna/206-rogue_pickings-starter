@@ -13,7 +13,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
 }
 
 .container {
@@ -22,66 +21,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: row wrap;
-}
-
-header {
-	max-width: 1200px;
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
-}
-
-header h1 {
-	margin: 0;
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-bottom: 0.1em solid #77a466;
-}
-
-header h1 span {
-	color: #77a466;
-}
-
-header nav {
-	padding-right: 1.75em;
-}
-
-header nav ul li {
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 0.875em;
-	padding: .625em;
-	list-style: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-header nav ul li a {
-	text-decoration: none;
-	color: #77a466;
-}
-
-.top-section {
-	max-width: 1200px;
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
-}
-
-.bottom-section {
-	max-width: 1200px;
-	width: 90%;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
 	flex-flow: row wrap;
 }
 
@@ -94,43 +33,77 @@ h4 {
 	font-weight: 700;
 }
 
-h1 {
-	font-size: 1.875em;
-}
-
-h2 {
-	font-size: 1.5em;
-}
-
-h3 {
-	font-size: 1.125em;
-}
-
-h4 {
-	font-size: 0.75em;
-}
-
 p {
 	font-size: 0.875em;
 	line-height: 1.3125em;
-	padding: 0 1.875em;
 }
 
-.top-section,
-.bottom-section {
-	margin: 0 auto;
+ul {
+	margin: 0;
+}
+
+header {
+	border-bottom: 3px solid #77a466;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+
+header h1 {
+	font-size: 1.875em;
+	margin: 0;
+	padding: 38px 20px 20px 20px;
+	width: 100%;
+	border-bottom: .1em solid #77a466;
+}
+
+header h1 span {
+	color: #77a466;
+}
+
+header nav {
+	padding-right: 20px 0;
+	width: 100%;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.875em;
+	padding: 10px 0;
+	list-style: none;
+}
+
+header nav ul li a {
+	text-decoration: none;
+	color: #77a466;
+}
+
+.top-section .bottom-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
 }
 
 .main-image img {
 	width: 100%;
-	border-top: 0.1875em solid #77a466;
 	border-bottom: 0.1875em solid #77a466;
 }
 
 .main-title h3 {
 	text-align: left;
-	padding: 0.3125em 0;
+	padding: 5px 0;
 	color: #77a466;
+	font-size: 1.125em;
 }
 
 .main-title p {
@@ -142,23 +115,8 @@ p {
 .section-one,
 .section-two,
 .section-three {
-	width: 90%;
-	border-top: 0.0625em solid #eee;
-	align-content: center;
-}
-
-.section-one h4 {
-	padding: 0.625em 0;
-}
-
-.section-two {
-	border-left: 0.0625em solid #eee;
-	border-right: 0.0625em solid #eee;
-}
-
-.section-two h4,
-.section-three h4 {
-	padding: 0.625em 1.875em;
+	width: 100%;
+	border-top: 1px solid #eee;
 }
 
 .menu {
@@ -167,7 +125,7 @@ p {
 }
 
 .menu li {
-	padding: 0.625em 0;
+	padding: 10px 0;
 	color: #77a466;
 }
 
@@ -183,15 +141,13 @@ p {
 }
 
 footer {
-	max-width: 1200px;
-	width: 90%;
+	border-top: 3px solid #eee;
+	text-align: center;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
-	border-top: 0.1875em solid #eee;
-	margin: 0 auto;
-	text-align: center;
 }
 
 footer span {
@@ -204,26 +160,47 @@ footer span {
 @media all and (min-width:768px) {
 
 	/* Tablet styles here */
+	.bottom-section {
+		justify-content: space-between;
+		align-items: flex-start;
+		border-top: 1px solid #eee;
+	}
+
 	.section-one,
 	.section-two,
 	.section-three {
-		width: 33%;
-		border-top: 0.0625em solid #eee;
+		border-top: none;
+		flex-basis: 30%;
+	}
+
+	.section-two {
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+		padding: 0 20px;
 	}
 }
 
-@media all and (min-width:1200px) {
+@media only screen and (min-width:1200px) {
 
 	/* Desktop styles here */
+
+	header {
+		justify-content: space-between;
+	}
+
+	header h1 {
+		width: 30%;
+		padding: 0;
+		border-bottom: none;
+		text-align: left;
+	}
+
 	header nav {
-		display: flex;
-		justify-content: flex-end;
-		border: 1px solid red;
+		width: 40%;
 	}
 
 	header nav ul {
 		display: flex;
 		justify-content: space-between;
-		border: 1px solid red;
 	}
 }
